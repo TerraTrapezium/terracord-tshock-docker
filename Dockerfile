@@ -36,7 +36,7 @@ RUN apt-get update && \
     nuget update -self
 RUN git clone --recurse-submodules -j8 --depth 1 --branch master https://github.com/FragLand/terracord.git /app && \
     cd /app && \
-    git checkout f034948040889602095053b8e401d8b4efef3c83
+    git checkout e4f19cc0093b4e2335fdea55dc194bbc60da8987
 WORKDIR /app
 RUN mkdir -p /app/lib
 COPY --from=tshock /app/TShockAPI/bin/${BUILD_MODE}/ /app/lib/
