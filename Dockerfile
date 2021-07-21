@@ -41,7 +41,7 @@ WORKDIR /app
 RUN mkdir -p /app/lib
 COPY --from=tshock /app/TShockAPI/bin/${BUILD_MODE}/ /app/lib/
 RUN nuget restore && \
-    msbuild /p:Configuration=${BUILD_MODE},TargetFrameworks=net46 Terracord/Terracord.csproj
+    msbuild /p:Configuration=${BUILD_MODE},TargetFrameworks=net461 Terracord/Terracord.csproj
 
 FROM mono:6.8
 LABEL maintainer="Didstopia <support@didstopia.com>"
