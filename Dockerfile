@@ -69,8 +69,8 @@ VOLUME ["/tshock/worlds", "/tshock/logs", "/plugins"]
 RUN mkdir -p /tshock/ServerPlugins/ && \
     mkdir -p /tshock/tshock/Terracord
 COPY entrypoint.sh /tshock/entrypoint.sh
-COPY --from=terracord /app/Terracord/bin/${BUILD_MODE}/net46/ /tshock/
-COPY --from=terracord /app/Terracord/bin/${BUILD_MODE}/net46/TShockAPI.dll /tshock/ServerPlugins/
+COPY --from=terracord /app/Terracord/bin/${BUILD_MODE}/net461/ /tshock/
+COPY --from=terracord /app/Terracord/bin/${BUILD_MODE}/net461/TShockAPI.dll /tshock/ServerPlugins/
 COPY --from=terracord /app/terracord.xml /tshock/tshock/Terracord/
 RUN chmod +x /tshock/entrypoint.sh && \
     chmod +x /tshock/TerrariaServer.exe && \
